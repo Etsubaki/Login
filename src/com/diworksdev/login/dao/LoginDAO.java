@@ -19,12 +19,11 @@ public class LoginDAO {
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, name);
 			ps.setString(2, password);
-
 			ResultSet rs = ps.executeQuery();
 
 			if(rs.next()){
 				dto.setName(rs.getString("user_name"));
-				dto.setPassword(rs.getString("pssword"));
+				dto.setPassword(rs.getString("password"));
 			}
 		}catch(SQLException e){
 			e.printStackTrace();
